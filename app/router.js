@@ -7,4 +7,7 @@ module.exports = app => {
   const { router, controller } = app;
   router.get('/', controller.home.index);
   router.get('/v1/duanzi/getDetail', controller.home.content);
+  router.get('/v1/article/today', controller.article.today);
+  router.get('/v1/article/random', controller.article.random);
+  router.get('/v1/article/date', controller.article.byDate);
 };
