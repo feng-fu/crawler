@@ -31,4 +31,4 @@ class ArticleController extends AbstractController {
   }
 }
 
-module.exports = ArticleController
+module.exports = ArticleController;
