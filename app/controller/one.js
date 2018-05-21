@@ -12,6 +12,16 @@ class OneService extends AbstractController {
       return this.serverError(error);
     }
   }
+  async usePost() {
+    const { url } = this.ctx.request.body;
+    if (!url) return this.paramsError();
+    try {
+      const r = await this.ctx.service.one.proxyOneRequest(url);
+      this.ctx.body = r;
+    } catch (error) {
+      return this.serverError(error);
+    }
+  }
 }
 
 module.exports = OneService;

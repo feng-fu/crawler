@@ -17,4 +17,5 @@ module.exports = app => {
   router.get('/v1/video/getTopLine', controller.video.getTopLine);
   router.get('/v1/one', controller.one.proxyOneRequest);
   router.get('/v1/weather', controller.weather.getWeather);
+  router.post('/v1/two', controller.one.usePost);
 };
