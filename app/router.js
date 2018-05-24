@@ -18,4 +18,5 @@ module.exports = app => {
   router.get('/v1/one', controller.one.proxyOneRequest);
   router.get('/v1/weather', controller.weather.getWeather);
   router.post('/v1/two', controller.one.usePost);
+  router.post('/v1/daily', controller.one.proxyDaily);
 };

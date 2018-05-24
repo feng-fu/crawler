@@ -22,6 +22,16 @@ class OneService extends AbstractController {
       return this.serverError(error);
     }
   }
+  async proxyDaily() {
+    const { url } = this.ctx.request.body;
+    if (!url) return this.paramsError();
+    try {
+      const r = await this.ctx.service.one.proxyDaily(url);
+      this.ctx.body = r;
+    } catch (error) {
+      return this.serverError(error);
+    }
+  }
 }
 
 module.exports = OneService;
