@@ -2,9 +2,21 @@
 
 const AbstractController = require('./abstract');
 
+const rules = {
+  name: 'string',
+}
+
 class HomeController extends AbstractController {
   async index() {
     this.ctx.body = 'hi, egg';
+  }
+  async validateaa() {
+    try {
+      await this.ctx.validate(rules)
+      this.ctx.body = '12222'
+    } catch(e) {
+      this.paramsError(e)
+    }
   }
   async content() {
     const { url } = this.ctx.query;

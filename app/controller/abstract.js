@@ -12,13 +12,13 @@ module.exports = class AbstractController extends Controller {
     const msg = error && error.message ? error.message : 'server error.';
     this.ctx.body = {
       msg,
-      res: 1,
+      res: 700,
     };
   }
-  paramsError() {
+  paramsError(msg) {
     this.ctx.body = {
-      res: 2,
-      msg: 'params error.',
+      res: 701,
+      msg: msg,
     };
   }
 };

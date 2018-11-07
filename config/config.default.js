@@ -9,6 +9,8 @@ module.exports = appInfo => {
     csrf: false,
   };
 
+  config.validate = {};
+
   // add your config here
   config.middleware = [];
 
