@@ -15,10 +15,11 @@ module.exports = class AbstractController extends Controller {
       res: 700,
     };
   }
-  paramsError(msg) {
+  paramsError(msg = '参数错误') {
+    this.ctx.status = 422
     this.ctx.body = {
-      res: 701,
-      msg: msg,
+      code: 701,
+      msg,
     };
   }
 };

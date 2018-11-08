@@ -9,10 +9,19 @@ module.exports = appInfo => {
     csrf: false,
   };
 
-  config.validate = {};
-
+  // mongo config
+  config.mongoose = {
+    url: 'mongodb://localhost:27017/todo',
+    config: {}
+  }
+  
   // add your config here
-  config.middleware = [];
+  config.middleware = ['errorHandle'];
+
+  errorHandle: {
+    match: "/todo"
+  }
+
 
   return config;
 };

@@ -4,7 +4,7 @@ const AbstractController = require('./abstract');
 
 const rules = {
   name: 'string',
-}
+};
 
 class HomeController extends AbstractController {
   async index() {
@@ -12,10 +12,10 @@ class HomeController extends AbstractController {
   }
   async validateaa() {
     try {
-      await this.ctx.validate(rules)
-      this.ctx.body = '12222'
-    } catch(e) {
-      this.paramsError(e)
+      await this.ctx.validate(rules);
+      this.ctx.body = '12222';
+    } catch (e) {
+      this.paramsError(e);
     }
   }
   async content() {
